@@ -25,6 +25,12 @@ http
           case "css":
             eventEmitter.emit("add-css");
             break;
+          case "json":
+            res.writeHead(200, {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            });
+            break;
         }
 
         res.write(data);
@@ -42,8 +48,6 @@ function cssHandler(res) {
   return function () {
     return fs.readFile("style.css", function (err, data) {
       res.writeHead(200, { "Content-Type": "text/css" });
-      // res.write(data);
-      // res.end();
       return data;
     });
   };
