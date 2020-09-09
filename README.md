@@ -1,2 +1,2 @@
-# node-simpel-erver
+# node-simpel-server
 Simpel node js server
